@@ -1,7 +1,3 @@
-import { PrismaClient } from "@prisma/client";
-
-export const prisma = global.prisma || new PrismaClient();
-
-if (process.env.NODE_ENV !== "production") global.prisma = prisma;
-
-export * from "@prisma/client";
+// export PrismaClient and all ZenStack
+export { PrismaClient } from "@prisma/client";
+export * from '@zenstackhq/runtime';
