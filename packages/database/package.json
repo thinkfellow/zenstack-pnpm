@@ -18,19 +18,19 @@
     "studio": "prisma studio"
   },
   "dependencies": {
-    "@prisma/client": "^5.10.2",
-    "@zenstackhq/runtime": "2.4.1"
+    "@prisma/client": "^5.19.1",
+    "@zenstackhq/runtime": "2.5.1"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^20.11.24",
     "eslint": "^8.57.0",
-    "prisma": "^5.10.2",
+    "prisma": "^5.19.1",
     "rimraf": "^5.0.5",
     "tsup": "^8.0.2",
     "tsx": "^4.7.1",
     "typescript": "^5.3.3",
-    "zenstack": "2.4.1"
+    "zenstack": "2.5.1"
   }
 }
