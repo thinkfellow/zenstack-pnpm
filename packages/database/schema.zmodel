@@ -8,14 +8,14 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
-  output = "../generated/client"
+  output = "../generated/prisma"
 }
 
 // https://zenstack.dev/docs/reference/plugins/enhancer
 plugin enhancer {
   provider = '@core/enhancer'
   // This does not output the package.json locally
-  // output = './generated/zenstack'
+  output = './generated/zenstack'
   // and then it still tries to look in node_modules
 }
 
@@ -23,7 +23,6 @@ plugin enhancer {
 plugin zod {
   provider = '@core/zod'
   output = './generated/zod'
-  compile = true
 }
 
 // https://zenstack.dev/docs/reference/plugins/trpc

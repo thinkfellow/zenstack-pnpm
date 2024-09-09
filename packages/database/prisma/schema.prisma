@@ -10,7 +10,7 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/client"
+  output   = "../generated/prisma"
 }
 
 /// @@allow('read', true)
