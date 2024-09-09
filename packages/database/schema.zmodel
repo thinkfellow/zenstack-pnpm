@@ -11,6 +11,11 @@ generator client {
   output = "../generated/client"
 }
 
+plugin enhancer {
+  provider = '@core/enhancer'
+  output = './generated/zenstack'
+}
+
 model User {
   id            String    @id @default(cuid())
   name          String?
