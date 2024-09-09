@@ -1,15 +1,18 @@
-import {enhance} from "@repo/database";
-import {PrismaClient} from "@repo/database";
+import {getEnhance} from "@repo/database/client";
+import {prisma} from "@repo/database/client";
+import { UserCreateSchema } from "@repo/database/validators";
 
 export default async function IndexPage() {
-    const prismaClient = new PrismaClient();
     // this.db is typed `any` because the module is missing
-    const pusers = await prismaClient.user.findMany();
-    const zenstack = enhance(prismaClient);
+    const pusers = await prisma.user.findMany();
+    const zenstack = getEnhance();
     const zusers = await zenstack.user.findMany();
+    const testValid = UserCreateSchema.parse({ name: 'Me' });
 
     return (
         <div>
+            <h1>Validation runs?</h1>
+            { testValid.name }
             <h1>Prisma Users</h1>
             <pre>{JSON.stringify(pusers, null, 2)}</pre>
             <h1>ZenStack Users</h1>

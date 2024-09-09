@@ -11,10 +11,23 @@ generator client {
   output = "../generated/client"
 }
 
+// https://zenstack.dev/docs/reference/plugins/enhancer
 plugin enhancer {
   provider = '@core/enhancer'
-  output = './generated/zenstack'
+  // This does not output the package.json locally
+  // output = './generated/zenstack'
+  // and then it still tries to look in node_modules
 }
+
+// https://zenstack.dev/docs/reference/plugins/zod
+plugin zod {
+  provider = '@core/zod'
+  output = './generated/zod'
+  compile = true
+}
+
+// https://zenstack.dev/docs/reference/plugins/trpc
+// todo implement
 
 model User {
   id            String    @id @default(cuid())

@@ -99,6 +99,9 @@ importers:
       '@zenstackhq/runtime':
         specifier: 2.5.1
         version: 2.5.1(@prisma/client@5.19.1(prisma@5.19.1))
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*

@@ -1,8 +1,10 @@
 {
   "name": "@repo/database",
   "version": "1.0.0",
+  "type": "module",
   "exports": {
-    ".": "./src/client.ts"
+    "./client": "./src/client.ts",
+    "./validators": "./generated/zod/models/index.ts"
   },
   "scripts": {
     "db:migrate:deploy": "prisma migrate deploy",
@@ -19,7 +21,8 @@
   },
   "dependencies": {
     "@prisma/client": "^5.19.1",
-    "@zenstackhq/runtime": "2.5.1"
+    "@zenstackhq/runtime": "2.5.1",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
