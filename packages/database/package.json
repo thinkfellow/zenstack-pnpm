@@ -4,7 +4,8 @@
   "type": "module",
   "exports": {
     "./client": "./src/client.ts",
-    "./validators": "./generated/zod/models/index.ts"
+    "./validators": "./generated/zod/models/index.ts",
+    "./trpc": "./src/trpc.ts"
   },
   "scripts": {
     "db:migrate:deploy": "prisma migrate deploy",
@@ -21,6 +22,8 @@
   },
   "dependencies": {
     "@prisma/client": "^5.19.1",
+    "@trpc/next": "^10.45.2",
+    "@trpc/server": "^10.45.2",
     "@zenstackhq/runtime": "2.5.1",
     "zod": "^3.23.8"
   },
@@ -28,7 +31,9 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^20.11.24",
+    "@zenstackhq/trpc": "^2.5.1",
     "eslint": "^8.57.0",
+    "next": "^14.1.1",
     "prisma": "^5.19.1",
     "rimraf": "^5.0.5",
     "tsup": "^8.0.2",
