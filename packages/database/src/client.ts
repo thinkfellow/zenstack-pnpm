@@ -6,6 +6,7 @@
 import { PrismaClient } from '../generated/prisma';
 // this runs into all kinds of reference problems
 // import {enhance} from '../generated/zenstack/enhance';
+
 import {enhance} from '@zenstackhq/runtime';
 
 export const prisma = new PrismaClient();

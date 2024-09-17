@@ -16,7 +16,7 @@ generator client {
 plugin enhancer {
   provider = '@core/enhancer'
   // This does not output the package.json locally
-  output = './generated/zenstack'
+  // output = './generated/zenstack'
   // and then it still tries to look in node_modules
 }
 
@@ -24,6 +24,8 @@ plugin enhancer {
 plugin zod {
   provider = '@core/zod'
   output = './generated/zod'
+  // this is supposed to be the default, but it doesn't compile anything
+  compile = true
 }
 
 // https://zenstack.dev/docs/reference/plugins/trpc
