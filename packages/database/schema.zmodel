@@ -8,6 +8,7 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+  // relative to `schema.prisma`
   output = "../generated/prisma"
 }
 
@@ -27,6 +28,14 @@ plugin zod {
 
 // https://zenstack.dev/docs/reference/plugins/trpc
 // todo implement
+plugin trpc {
+  provider = '@zenstackhq/trpc'
+  output = './generated/trpc'
+  generateModelActions = 'create,update,findUnique,findMany'
+  generateClientHelpers = 'next'
+  // relative to `${output}/routers`
+  zodSchemasImport = '../../zod'
+}
 
 model User {
   id            String    @id @default(cuid())

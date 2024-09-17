@@ -1,6 +1,7 @@
 import {getEnhance} from "@repo/database/client";
 import {prisma} from "@repo/database/client";
 import { UserCreateSchema } from "@repo/database/validators";
+import { appRouter} from '@repo/database/trpc';
 
 export default async function IndexPage() {
     // this.db is typed `any` because the module is missing
